@@ -1,9 +1,11 @@
 #include <iostream>
-#include "Vozilo.h"
+#include "Kamion.h"
+#include "Automobil.h"
 
 int main() {
-	Vozilo v;
-	std::cin >> v;
-	std::cout << v;
+	Kamion k;
+	std::cout << k;
+	Automobil a;
+	std::cout << a;
 	return 0;
 }

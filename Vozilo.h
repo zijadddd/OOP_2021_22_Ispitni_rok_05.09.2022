@@ -38,7 +38,7 @@ public:
 	double faktorPogona();
 	double faktorPrenosa();
 
-	virtual int getCijena();
+	virtual double getCijena();
 	virtual char* vratiTip();
 
 	double nulaDoSto();

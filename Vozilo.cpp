@@ -133,7 +133,7 @@ double Vozilo::faktorPrenosa()
     }
 }
 
-int Vozilo::getCijena()
+double Vozilo::getCijena()
 {
     return 0;
 }
@@ -147,6 +147,7 @@ double Vozilo::nulaDoSto()
 {
     double result = pow(this->getTezinaVozila() * (2.2046 / this->getBrojKonjskihSnaga()) * 0.9 * this->faktorPogona() * this->faktorPrenosa(), 3);
     result = pow(result, 0.25);
+    // 0.25 = 1/4 = ili 4 korijen
     return result;
 }
 
