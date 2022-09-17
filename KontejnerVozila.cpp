@@ -23,7 +23,7 @@ void KontejnerVozila::setKamioni()
     this->vozila.push_back(k);
     this->brojVozila++;
 
-    std::ofstream izlaz("./automobili.txt", std::ios_base::app | std::ios_base::out);
+    std::ofstream izlaz("./kamioni.txt", std::ios_base::app | std::ios_base::out);
     izlaz << k;
 }
 
