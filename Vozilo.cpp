@@ -2,11 +2,7 @@
 
 Vozilo::Vozilo()
 {
-    strcpy_s(this->imeVozila, "Vozilo");
-    this->tezinaVozila = 1000; 
-    this->brojKonjskihSnaga = 140;
-    this->pogon = FWD;
-    this->mjenjac = MANUAL;
+
 }
 
 void Vozilo::setImeVozila()

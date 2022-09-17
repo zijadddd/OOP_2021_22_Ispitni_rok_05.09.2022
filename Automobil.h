@@ -15,6 +15,7 @@ public:
     double getCijena();
     char* vratiTip();
 
+    friend std::ostream& operator>>(std::ostream& stream, Automobil& a);
     friend std::ostream& operator<<(std::ostream& stream, Automobil& a);
 
     ~Automobil() {};
