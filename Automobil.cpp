@@ -5,7 +5,7 @@ Automobil::Automobil()
     // Receno je u zadatku da se za klase Automobil i Kamion
     // uradi konstruktor i metoda za ispis.
     // Zato ovo radim u konstruktoru.
-    std::cout << "Unesite karakteristike automobila !\n";
+    std::cout << "\t\t\t\t  Unesite karakteristike automobila !\n";
     this->setImeVozila();
     this->setTezinaVozila();
     this->setBrojKonjskihSnaga();
@@ -16,11 +16,11 @@ Automobil::Automobil()
 
 void Automobil::setRokOtplate()
 {
-    std::cout << "Unesite rok otplate automobila: ";
     do {
+        std::cout << "\t\t\t\t  Unesite rok otplate automobila: ";
         std::cin >> this->rokOtplate;
         if (this->rokOtplate < 0) {
-            std::cout << "[GRESKA] Rok otplate ne moze biti manji od 0 !\nPonovo unesite rok otplate automobila: ";
+            std::cout << "\t\t\t\t  [GRESKA] Rok otplate ne moze biti manji od 0 !\n";
         }
     } while (this->rokOtplate < 0);
 }
@@ -54,11 +54,11 @@ char* Automobil::vratiTip()
 
 std::ostream& operator<<(std::ostream& stream, Automobil& a)
 {
-    std::cout << "Podaci o kamionu\n";
-    std::cout << "Ime kamiona: " << a.getImeVozila() << "\n";
-    std::cout << "Tezina: " << a.getTezinaVozila() << "\n";
-    std::cout << "Broj konjskih snaga: " << a.getBrojKonjskihSnaga() << "\n";
-    std::cout << "Pogon: ";
+    std::cout << "\t\t\t\t  Podaci o kamionu\n";
+    std::cout << "\t\t\t\t  Ime kamiona: " << a.getImeVozila() << "\n";
+    std::cout << "\t\t\t\t  Tezina: " << a.getTezinaVozila() << "\n";
+    std::cout << "\t\t\t\t  Broj konjskih snaga: " << a.getBrojKonjskihSnaga() << "\n";
+    std::cout << "\t\t\t\t  Pogon: ";
     switch (a.getPogon()) {
     case 0:
         std::cout << "FWD\n";
@@ -70,7 +70,7 @@ std::ostream& operator<<(std::ostream& stream, Automobil& a)
         std::cout << "AWD\n";
         break;
     }
-    std::cout << "Mjenjac: ";
+    std::cout << "\t\t\t\t  Mjenjac: ";
     switch (a.getMjenjac()) {
     case 0:
         std::cout << "MANUAL\n";
@@ -82,9 +82,9 @@ std::ostream& operator<<(std::ostream& stream, Automobil& a)
         std::cout << "DUAL CLUTCH\n";
         break;
     }
-    std::cout << "Nula do sto funkcija: " << std::fixed << std::setprecision(2) << a.nulaDoSto() << "\n";
-    std::cout << "Rok otplate: " << a.getRokOtplate() << " mjeseci\n";
-    std::cout << "Mjesecna rata: " << a.getMjesecnaRata() << " KM\n";
-    std::cout << "Ukupna cijena: " << a.getCijena() << " KM\n";
+    std::cout << "\t\t\t\t  Nula do sto funkcija: " << std::fixed << std::setprecision(2) << a.nulaDoSto() << "\n";
+    std::cout << "\t\t\t\t  Rok otplate: " << a.getRokOtplate() << " mjeseci\n";
+    std::cout << "\t\t\t\t  Mjesecna rata: " << a.getMjesecnaRata() << " KM\n";
+    std::cout << "\t\t\t\t  Ukupna cijena: " << a.getCijena() << " KM\n";
     return stream;
 }

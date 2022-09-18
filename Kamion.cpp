@@ -5,14 +5,14 @@ Kamion::Kamion()
     // Receno je u zadatku da se za klase Automobil i Kamion
     // uradi konstruktor i metoda za ispis.
     // Zato ovo radim u konstruktoru.
-    std::cout << "Unesite karakteristike kamiona !\n";
+    std::cout << "\t\t\t\t  Unesite karakteristike kamiona !\n";
     this->setImeVozila();
     this->setTezinaVozila();
     do {
         try {
             this->setBrojKonjskihSnaga();
             if (this->getBrojKonjskihSnaga() < 350) {
-                throw "[GRESKA] Broj konjskih snaga kamiona mora biti veca od 349 !\nPonovo unesite broj konjskih snaga kamiona: ";
+                throw "\t\t\t\t  [GRESKA] Broj konjskih snaga kamiona mora biti veca od 349 !\n";
             }
         }
         catch (const char* Greska) {
@@ -23,7 +23,7 @@ Kamion::Kamion()
         try {
             this->setPogon();
             if (this->getPogon() == 0) {
-                throw "[GRESKA] Kamion ne moze imati prednji pogon !\nPonovo unesite pogon kamiona: ";
+                throw "\t\t\t\t  [GRESKA] Kamion ne moze imati prednji pogon !\n";
             }
         }
         catch (const char* Greska) {
@@ -36,13 +36,13 @@ Kamion::Kamion()
 
 void Kamion::setNosivost()
 {
-    std::cout << "Unesite nosivost kamiona: ";
     do {
+        std::cout << "\t\t\t\t  Unesite nosivost kamiona: ";
         try {
             std::cin >> this->nosivost;
             // Ja sam ovdje 2 tone predstavio kao 2000 kg, mada nece biti greska ukoliko se promijeni i na manje jedinice kao npr 2 tone. 
             if (this->nosivost < 2000) {
-                throw "[GRESKA] Nosivost kamiona mora biti minimalno 2 tone.\nPonovo unesite nosivost kamiona: ";
+                throw "\t\t\t\t  [GRESKA] Nosivost kamiona mora biti minimalno 2 tone.\n";
             }
         }
         catch (const char* Greska) {
@@ -109,11 +109,11 @@ std::istream& operator>>(std::istream& stream, Kamion& k)
 */
 std::ostream& operator<<(std::ostream& stream, Kamion& k)
 {
-    std::cout << "Podaci o kamionu\n";
-    std::cout << "Ime kamiona: " << k.getImeVozila() << "\n";
-    std::cout << "Tezina: " << k.getTezinaVozila() << "\n";
-    std::cout << "Broj konjskih snaga: " << k.getBrojKonjskihSnaga() << "\n";
-    std::cout << "Pogon: ";
+    std::cout << "\t\t\t\t  Podaci o kamionu\n";
+    std::cout << "\t\t\t\t  Ime kamiona: " << k.getImeVozila() << "\n";
+    std::cout << "\t\t\t\t  Tezina: " << k.getTezinaVozila() << "\n";
+    std::cout << "\t\t\t\t  Broj konjskih snaga: " << k.getBrojKonjskihSnaga() << "\n";
+    std::cout << "\t\t\t\t  Pogon: ";
     switch (k.getPogon()) {
     case 0:
         std::cout << "FWD\n";
@@ -125,7 +125,7 @@ std::ostream& operator<<(std::ostream& stream, Kamion& k)
         std::cout << "AWD\n";
         break;
     }
-    std::cout << "Mjenjac: ";
+    std::cout << "\t\t\t\t  Mjenjac: ";
     switch (k.getMjenjac()) {
     case 0:
         std::cout << "MANUAL\n";
@@ -137,8 +137,8 @@ std::ostream& operator<<(std::ostream& stream, Kamion& k)
         std::cout << "DUAL CLUTCH\n";
         break;
     }
-    std::cout << "Nula do sto funkcija: " << std::fixed << std::setprecision(2) << k.nulaDoSto() << "\n";
-    std::cout << "Nosivost: " << k.getNosivost() << " kila. \n";
-    std::cout << "Cijena: " << k.getCijena() << " KM.\n";
+    std::cout << "\t\t\t\t  Nula do sto funkcija: " << std::fixed << std::setprecision(2) << k.nulaDoSto() << "\n";
+    std::cout << "\t\t\t\t  Nosivost: " << k.getNosivost() << " kila. \n";
+    std::cout << "\t\t\t\t  Cijena: " << k.getCijena() << " KM.\n";
     return stream;
 }

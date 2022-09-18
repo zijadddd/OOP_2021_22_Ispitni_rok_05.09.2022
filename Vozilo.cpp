@@ -2,47 +2,51 @@
 
 Vozilo::Vozilo()
 {
-
+    strcpy_s(this->imeVozila, "Vozilo");
+    this->tezinaVozila = 0;
+    this->brojKonjskihSnaga = 0; 
+    this->pogon = FWD;
+    this->mjenjac = MANUAL;
 }
 
 void Vozilo::setImeVozila()
 {
-    std::cout << "Unesite ime vozila: ";
     do {
+        std::cout << "\t\t\t\t  Unesite ime vozila: ";
         std::cin.getline(this->imeVozila, sizeof this->imeVozila);
-        if (strlen(this->imeVozila) == 0 || strlen(this->imeVozila) < 3) std::cout << "[GRESKA]Niste pravilno unijeli ime vozila!\nIme mora sadrzavati minimalno 3 karaktera.\nPonovo unesite ime vozila: ";
+        if (strlen(this->imeVozila) == 0 || strlen(this->imeVozila) < 3) std::cout << "\t\t\t\t  [GRESKA]Niste pravilno unijeli ime vozila!\n\t\t\t\t  Ime mora sadrzavati minimalno 3 karaktera.\n";
     } while (strlen(this->imeVozila) == 0 || strlen(this->imeVozila) < 3);
-    std::cout << "[INFO] Uspjesno ste postavili ime vozila.\n";
+    std::cout << "\t\t\t\t  [INFO] Uspjesno ste postavili ime vozila.\n";
 }
 
 void Vozilo::setTezinaVozila()
 {
-    std::cout << "Unesite tezinu vozila: ";
     do {
+        std::cout << "\t\t\t\t  Unesite tezinu vozila: ";
         std::cin >> this->tezinaVozila;
-        if (this->tezinaVozila < 100 || this->tezinaVozila > 50000) std::cout << "[GRESKA] Niste pravilno unijeli tezinu vozila!\nTezina vozila mora biti u rasponu 100-50000 kg.\nPonovo unesite tezinu vozila: ";
+        if (this->tezinaVozila < 100 || this->tezinaVozila > 50000) std::cout << "\t\t\t\t  [GRESKA] Niste pravilno unijeli tezinu vozila!\n\t\t\t\t  Tezina vozila mora biti u rasponu 100-50000 kg.\n";
     } while (this->tezinaVozila < 100 || this->tezinaVozila > 50000);
-    std::cout << "[INFO] Uspjesno ste postavili tezinu vozila.\n";
+    std::cout << "\t\t\t\t  [INFO] Uspjesno ste postavili tezinu vozila.\n";
 }
 
 void Vozilo::setBrojKonjskihSnaga()
 {
-    std::cout << "Unesite broj konjskih snaga vozila: ";
     do {
+        std::cout << "\t\t\t\t  Unesite broj konjskih snaga vozila: ";
         std::cin >> this->brojKonjskihSnaga;
-        if (this->brojKonjskihSnaga < 20 || this->brojKonjskihSnaga > 2000) std::cout << "[GRESKA] Niste pravilno unijeli broj konjskih snaga vozila!\nBroj konjskih snaga mora biti u rasponu 20-2000.\nPonovo unesite broj konjskih snaga: ";
+        if (this->brojKonjskihSnaga < 20 || this->brojKonjskihSnaga > 2000) std::cout << "\t\t\t\t  [GRESKA] Niste pravilno unijeli broj konjskih snaga vozila!\n\t\t\t\t  Broj konjskih snaga mora biti u rasponu 20-2000.\n";
     } while (this->brojKonjskihSnaga < 20 || this->brojKonjskihSnaga > 2000);
     // Maksimalni broj konjskih snaga sam dao onako, nez kako se krecu 
-    std::cout << "[INFO] Uspjesno ste postavili broj konjskih snaga vozila.\n";
+    std::cout << "\t\t\t\t  [INFO] Uspjesno ste postavili broj konjskih snaga vozila.\n";
 }
 
 void Vozilo::setPogon()
 {
-    std::cout << "Moguci pogoni: FWD = 0 | RWD = 1 | AWD = 2\nUnesite pogon vozila: ";
     int choice = 0; 
     do {
+        std::cout << "\t\t\t\t  Moguci pogoni: FWD = 0 | RWD = 1 | AWD = 2\n\t\t\t\t  Unesite pogon vozila: ";
         std::cin >> choice;
-        if (choice < 0 || choice > 2) std::cout << "[GRESKA] Niste pravilno unijeli pogon vozila!\nOdabir pogona mora biti u rasponu 0-2.\nPonovo unesite pogon vozila: ";
+        if (choice < 0 || choice > 2) std::cout << "\t\t\t\t  [GRESKA] Niste pravilno unijeli pogon vozila!\n\t\t\t\t  Odabir pogona mora biti u rasponu 0-2.\n";
     } while (choice < 0 || choice > 2);
     switch(choice) {
     case 0:
@@ -55,16 +59,16 @@ void Vozilo::setPogon()
         this->pogon = AWD;
         break;
     }
-    std::cout << "[INFO] Uspjesno ste postavili pogon vozila.\n";
+    std::cout << "\t\t\t\t  [INFO] Uspjesno ste postavili pogon vozila.\n";
 }
 
 void Vozilo::setMjenjac()
 {
-    std::cout << "Moguci mjenjaci: MANUAL = 0 | AUTOMATIC = 1 | DUAL_CLUTCH = 2\nUnesite mjenjac vozila: ";
     int choice = 0;
     do {
+        std::cout << "\t\t\t\t  Moguci mjenjaci: MANUAL = 0 | AUTOMATIC = 1 | DUAL_CLUTCH = 2\n\t\t\t\t  Unesite mjenjac vozila: ";
         std::cin >> choice;
-        if (choice < 0 || choice > 2) std::cout << "[GRESKA] Niste pravilno unijeli mjenjac vozila!\nOdabir mjenjaca mora biti u rasponu 0-2.\nPonovo unesite mjenjac vozila: ";
+        if (choice < 0 || choice > 2) std::cout << "\t\t\t\t  [GRESKA] Niste pravilno unijeli mjenjac vozila!\n\t\t\t\t  Odabir mjenjaca mora biti u rasponu 0-2.\n";
     } while (choice < 0 || choice > 2);
     switch (choice) {
     case 0:
@@ -77,7 +81,7 @@ void Vozilo::setMjenjac()
         this->mjenjac = DUAL_CLUTCH;
         break;
     }
-    std::cout << "[INFO] Uspjesno ste postavili mjenjac vozila.\n";
+    std::cout << "\t\t\t\t  [INFO] Uspjesno ste postavili mjenjac vozila.\n";
 }
 
 char* Vozilo::getImeVozila()
@@ -159,11 +163,11 @@ std::istream& operator>>(std::istream& stream, Vozilo& v)
 
 std::ostream& operator<<(std::ostream& stream, Vozilo& v)
 {
-    std::cout << "Podaci o vozilu\n";
-    std::cout << "Ime vozila: " << v.getImeVozila() << "\n";
-    std::cout << "Tezina: " << v.getTezinaVozila() << "\n";
-    std::cout << "Broj konjskih snaga: " << v.getBrojKonjskihSnaga() << "\n";
-    std::cout << "Pogon: ";
+    std::cout << "\t\t\t\t  Podaci o vozilu\n";
+    std::cout << "\t\t\t\t  Ime vozila: " << v.getImeVozila() << "\n";
+    std::cout << "\t\t\t\t  Tezina: " << v.getTezinaVozila() << "\n";
+    std::cout << "\t\t\t\t  Broj konjskih snaga: " << v.getBrojKonjskihSnaga() << "\n";
+    std::cout << "\t\t\t\t  Pogon: ";
     switch (v.getPogon()) {
     case 0:
         std::cout << "FWD\n";
@@ -175,7 +179,7 @@ std::ostream& operator<<(std::ostream& stream, Vozilo& v)
         std::cout << "AWD\n";
         break;
     }
-    std::cout << "Mjenjac: ";
+    std::cout << "\t\t\t\t  Mjenjac: ";
     switch (v.getMjenjac()) {
     case 0:
         std::cout << "MANUAL\n";
@@ -187,6 +191,6 @@ std::ostream& operator<<(std::ostream& stream, Vozilo& v)
         std::cout << "DUAL CLUTCH\n";
         break;
     }
-    std::cout << "Nula do sto funkcija: " << std::fixed << std::setprecision(2) << v.nulaDoSto();
+    std::cout << "\t\t\t\t  Nula do sto funkcija: " << std::fixed << std::setprecision(2) << v.nulaDoSto();
     return stream;
 }
