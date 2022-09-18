@@ -27,7 +27,7 @@ public:
 
 	Vozilo vratiNajbrze();
 	Vozilo operator[](int i);
-	std::vector<Vozilo>& operator()(int k);
+	std::vector<Vozilo> operator()(int k);
 
 	~KontejnerVozila() {};
 	

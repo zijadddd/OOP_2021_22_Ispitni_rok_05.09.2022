@@ -97,7 +97,7 @@ int main() {
 				} while (num < 0);
 				std::vector<Vozilo> vozila = kontejner(num);
 				// Vracen je vektor vozila, ali ja ispisujem samo imena vozila.
-				for (int i = 0; i < vozila.size(); i++) std::cout << i + 1 << ". " << vozila[i].getImeVozila() << std::endl;
+				for (int i = 0; i < vozila.size(); i++) std::cout << "\n\t\t\t\t  " << i + 1 << ". " << vozila[i].getImeVozila() << std::endl;
 				std::cout << "\n\t\t\t\t  Pritisnite bilo koju tipku da nastavite...";
 				_getch();
 				break;

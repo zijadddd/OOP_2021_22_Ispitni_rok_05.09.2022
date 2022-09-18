@@ -12,7 +12,15 @@ void KontejnerVozila::setAutomobil()
 
 
     std::ofstream izlaz("./automobili.txt", std::ios_base::app | std::ios_base::out);
-    izlaz << a;
+    izlaz << a.getImeVozila() << std::endl;
+    izlaz << a.getBrojKonjskihSnaga() << std::endl;
+    izlaz << a.getTezinaVozila() << std::endl;
+    izlaz << a.getMjenjac() << std::endl;
+    izlaz << a.getPogon() << std::endl;
+    izlaz << a.getCijena() << std::endl;
+    izlaz << a.getRokOtplate() << std::endl;
+    izlaz << a.getMjesecnaRata() << std::endl;
+    izlaz.close();
 }
 
 void KontejnerVozila::setKamion()
@@ -22,7 +30,13 @@ void KontejnerVozila::setKamion()
     this->vozila.push_back(k);
 
     std::ofstream izlaz("./kamioni.txt", std::ios_base::app | std::ios_base::out);
-    izlaz << k;
+    izlaz << k.getImeVozila() << std::endl;
+    izlaz << k.getBrojKonjskihSnaga() << std::endl;
+    izlaz << k.getTezinaVozila() << std::endl;
+    izlaz << k.getMjenjac() << std::endl;
+    izlaz << k.getPogon() << std::endl;
+    izlaz << k.getNosivost() << std::endl;
+    izlaz.close();
 }
 
 Vozilo KontejnerVozila::vratiNajbrze()
@@ -52,7 +66,7 @@ Vozilo KontejnerVozila::operator[](int i)
     }
 }
 
-std::vector<Vozilo>& KontejnerVozila::operator()(int k)
+std::vector<Vozilo> KontejnerVozila::operator()(int k)
 {
     try {
         if (this->vozila.size() <= 0) throw "\t\t\t\t  Nema vozila u kolekciji !";
